@@ -93,9 +93,7 @@ func updateActivities(db *sql.DB, activities Activities) {
 }
 
 func updateActivityRecord(act Activity, activities Activities) {
-	if act.state_change != activities[act.id].state_change {
-		activities[act.id] = act
-	}
+	activities[act.id] = act
 }
 
 func getActivityRecord(rows *sql.Rows) (Activity, error) {
