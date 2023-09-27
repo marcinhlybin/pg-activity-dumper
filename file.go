@@ -46,13 +46,14 @@ func gzipFile(srcPath string) error {
 	defer destFile.Close()
 
 	writer := gzip.NewWriter(destFile)
-
 	_, err = io.Copy(writer, srcFile)
 	if err != nil {
 		writer.Close()
 		os.Remove(destPath)
 		return err
 	}
+
+	writer.Close()
 
 	// Remove source file if no errors
 	return os.Remove(srcPath)
