@@ -1,0 +1,11 @@
+[Unit]
+Description=PostgreSQL Activity Dumper
+
+[Service]
+Type=simple
+User=postgres
+ExecStart=/usr/local/bin/pg-activity-dumper
+#Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
