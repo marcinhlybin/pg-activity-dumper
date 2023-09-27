@@ -5,5 +5,11 @@ Gets records from pg_stat_activity view every 10 seconds and dumps the data to C
 Build with:
 
 ```
+go build
+```
+
+or for particular platform:
+
+```
 GOOS=linux GOARCH=amd64 go build
 ```
